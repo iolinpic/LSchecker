@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LSchecker", "LSchecker\LSchecker.csproj", "{4A7DB56B-FFCF-4981-B8FE-D3B9A4ADE6BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A7DB56B-FFCF-4981-B8FE-D3B9A4ADE6BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A7DB56B-FFCF-4981-B8FE-D3B9A4ADE6BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A7DB56B-FFCF-4981-B8FE-D3B9A4ADE6BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A7DB56B-FFCF-4981-B8FE-D3B9A4ADE6BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A7C7004-5AD8-460E-89A2-9E1366A93C50}
+	EndGlobalSection
+EndGlobal

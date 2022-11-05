@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LSchecker
+namespace LSchecker.Models
 {
-    public class LookupResult
+    public class Lookup
     {
         public int Id { get; set; }
         public string Link { get; set; } = "";

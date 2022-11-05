@@ -10,10 +10,10 @@ namespace LSchecker
     {
         public void listPrepare()
         {
-            using (ApplicationContext db = new ApplicationContext())
-            {
-                var list = db.Lookups.ToList();
-            }
+            /*            using (ApplicationContext db = new ApplicationContext())
+                        {
+                            var list = db.Lookups.ToList();
+                        }*/
         }
     }
 }

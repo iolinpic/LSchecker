@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using LSchecker.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,13 +10,11 @@ namespace LSchecker
 {
     public class ApplicationContext : DbContext
     {
-        public DbSet<LookupResult> Lookups => Set<LookupResult>();
+        public DbSet<Lookup> Lookups => Set<Lookup>();
 
-        public ApplicationContext() => Database.EnsureCreated();
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
-            optionsBuilder.UseSqlite("Data Source=ls_res.db");
+            Database.EnsureCreated();
         }
     }
 }

@@ -18,16 +18,14 @@ namespace LSchecker.Services
         private string _linksFileName;
         private ICaller _caller;
         private ApplicationContext _db;
-        private ILogger _logger;
 
-        public LookupRunner(IConfiguration configuration, ICaller caller, ApplicationContext db, ILoggerFactory loggerFactory)
+        public LookupRunner(IConfiguration configuration, ICaller caller, ApplicationContext db)
         {
             _lookups = new List<Lookup>();
             _lastLookups = new Dictionary<string, bool>();
             _linksFileName = configuration.GetSection("links").Value;
             _caller = caller;
             _db = db;
-            _logger = loggerFactory.CreateLogger<LookupRunner>();
         }
 
         private async Task LoadLookupList()
@@ -82,13 +80,13 @@ namespace LSchecker.Services
             await _db.SaveChangesAsync();
         }
 
-        private Task notifyChanel(Lookup lookup)
+        private Task<bool> notifyChanel(Lookup lookup)
         {
             var str = new StringBuilder();
-            str.Append($"link: {lookup.Link}");
+            str.Append($"**Link**: {lookup.Link}");
             str.Append(Environment.NewLine);
-            str.Append($"error:{lookup.Result}");
-            return _caller.SendNotificationAsync(UrlEncoder.Default.Encode(str.ToString()));
+            str.Append($"**Error**:{lookup.Result}");
+            return _caller.SendNotificationAsync(str.ToString());
         }
     }
 }

@@ -20,13 +20,13 @@ var services = new ServiceCollection()
     .AddSingleton<ICaller, Caller>()
     .AddDbContext<ApplicationContext>(options => options.UseSqlite(connectionString))
     .AddTransient<ILookupRunner, LookupRunner>()
+    .AddTransient<IDataAnalyse, DataAnalyse>()
     .BuildServiceProvider();
-// logger Instance
-var logger = services.GetService<ILoggerFactory>()
-    .CreateLogger<Program>();
 // actual program
-logger.LogInformation("start");
+//todo add flags for timed usage and for weekly report (db cleaning)
 var runner = services.GetService<ILookupRunner>();
 if (runner != null)
     await runner.runLookupListCheckAsync();
-logger.LogInformation("finish");
+var reporter = services.GetService<IDataAnalyse>();
+if (reporter != null)
+    reporter.prepareReport();

@@ -11,6 +11,8 @@ namespace LSchecker.Services
     {
         public Task<HttpStatusCode> GetAsync(string url);
 
-        public Task SendNotificationAsync(string message);
+        public Task<bool> SendNotificationAsync(string message);
+
+        public Task<bool> SendReportFileAsync(string filename, string message);
     }
 }

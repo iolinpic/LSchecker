@@ -15,7 +15,7 @@ var Configuration = new ConfigurationBuilder()
 string connectionString = Configuration.GetConnectionString("DefaultConnection");
 // setup DI
 var services = new ServiceCollection()
-    //.AddLogging(loggingBuilder => loggingBuilder.AddConsole().SetMinimumLevel(LogLevel.Information))
+    .AddLogging(loggingBuilder => loggingBuilder.AddConsole().SetMinimumLevel(LogLevel.Information))
     .AddSingleton<IConfiguration>(Configuration)
     .AddSingleton<ICaller, Caller>()
     .AddDbContext<ApplicationContext>(options => options.UseSqlite(connectionString))

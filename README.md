@@ -31,7 +31,9 @@ uses sqlite database for storing results of requests
 ## Notification
 notify user to telegram chanel via telegram bot api (public chanel with bot set as admin)
 ## Reports
-> dontet ./LSchecker -report
+```
+ dontet ./LSchecker -report
+```
 using db stored data for preparing simple xlsx report, containing:
 - start - DateTime of detected failure
 - end - DateTime of changed state

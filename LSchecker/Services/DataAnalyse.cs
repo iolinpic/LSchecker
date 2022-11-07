@@ -54,8 +54,8 @@ namespace LSchecker.Services
             //deliver report for user (tg?,email?)
             Task.Run(async () => await _caller.SendReportFileAsync(FILENAME, "Еженедельный отчет по неработающим сайтам")).Wait();
             //clear db for previos week lookups
-            //_db.Lookups.RemoveRange(weeklyLookups);
-            //_db.SaveChanges();
+            _db.Lookups.RemoveRange(weeklyLookups);
+            _db.SaveChanges();
         }
 
         private void prepareData()

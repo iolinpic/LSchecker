@@ -24,9 +24,16 @@ var services = new ServiceCollection()
     .BuildServiceProvider();
 // actual program
 //todo add flags for timed usage and for weekly report (db cleaning)
-var runner = services.GetService<ILookupRunner>();
-if (runner != null)
-    await runner.runLookupListCheckAsync();
-var reporter = services.GetService<IDataAnalyse>();
-if (reporter != null)
-    reporter.prepareReport();
+
+if (args.Length > 0 && args[0] == "-report")
+{
+    var reporter = services.GetService<IDataAnalyse>();
+    if (reporter != null)
+        reporter.prepareReport();
+}
+else
+{
+    var runner = services.GetService<ILookupRunner>();
+    if (runner != null)
+        await runner.runLookupListCheckAsync();
+}

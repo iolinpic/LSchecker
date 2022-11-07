@@ -4,7 +4,7 @@ starting and report timers are managed by OS included methods (for example cron 
 ## Configuring
 app has 2 config files: 
 - appsettings.json - all settings required, _tg_token is your bot token, _tg_chanel_name is name in public link of chanel after "t.me/"
-'''
+```
 {
   "token": "_tg_token",
   "channel": "@_tg_chanel_name",
@@ -13,9 +13,9 @@ app has 2 config files:
     "DefaultConnection": "Data Source=ls_res.db"
   }
 }
- '''
+```
 - links.json - config containing list of links you would like to monitor formated as:
-'''
+```
 [
   {
     "Link": "http://example.com"
@@ -24,7 +24,7 @@ app has 2 config files:
     "Link": "https://example.com"
   }
 ]
- '''
+```
 app reads it's configs at each run so you can freely change them without reloading
 ## Database
 uses sqlite database for storing results of requests
